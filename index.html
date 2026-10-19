@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kamerton – strojenie fortepianów i pianin, Warszawa</title>
+<meta name="description" content="Strojenie, regulacja i naprawa fortepianów oraz pianin w Warszawie i okolicach. Sprawdź dojazd i zarezerwuj wizytę.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bialy:#FBFBF8;--czarny:#121212;--grafit:#2A2A2A;--szary:#6B6B66;--linia:#DEDDD6;--wisnia:#8C1C2B;--kosc:#F0EEE6;
+  --serif:"Bodoni Moda", Didot, "Times New Roman", serif;--sans:"Work Sans", "Segoe UI", system-ui, sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bialy);color:var(--czarny);font-family:var(--sans);font-size:1.0625rem;line-height:1.6}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:500;line-height:1.05;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--wisnia);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(18px,4vw)}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-block:22px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:1.7rem;font-weight:700;font-style:italic;text-decoration:none;color:inherit}
+.brand sup{font-style:normal;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.04em;margin-left:4px;color:var(--wisnia)}
+header nav{display:flex;gap:24px;font-size:.95rem}
+header nav a{color:var(--szary);text-decoration:none}
+header nav a:hover{color:var(--czarny)}
+
+.hero{padding-block:clamp(40px,6vw,80px) 0}
+.hero h1{font-size:clamp(3rem,1.8rem + 6vw,7.5rem);letter-spacing:-.02em;max-width:11em}
+.hero .sub{display:grid;gap:24px;margin-top:32px;align-items:end}
+@media(min-width:860px){.hero .sub{grid-template-columns:1fr auto}}
+.hero .sub p{font-size:1.2rem;color:var(--szary);max-width:34em}
+.btn{font:inherit;font-weight:600;border:0;background:var(--czarny);color:var(--bialy);padding:15px 28px;cursor:pointer;text-decoration:none;display:inline-block;border-radius:999px}
+.btn:hover{background:var(--wisnia)}
+.btn--line{background:transparent;color:var(--czarny);box-shadow:inset 0 0 0 1.5px var(--czarny)}
+.btn--line:hover{background:var(--czarny);color:var(--bialy)}
+
+/* Klawiatura */
+.keys-wrap{margin-top:48px;border-top:1px solid var(--czarny);border-bottom:1px solid var(--czarny);background:var(--kosc)}
+.keys-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px;font-size:.92rem;color:var(--szary)}
+.keys-head output{font-family:var(--serif);font-size:1.25rem;color:var(--czarny);font-variant-numeric:tabular-nums}
+.keys{position:relative;display:flex;height:clamp(150px,22vw,240px);user-select:none;touch-action:manipulation}
+.white{flex:1;background:linear-gradient(#fff,#F6F5EF);border-right:1px solid #CFCDC4;border-radius:0 0 6px 6px;cursor:pointer;position:relative;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;font-size:.75rem;color:#9A988F;border-top:0}
+.white:first-child{border-left:1px solid #CFCDC4}
+.white.on{background:linear-gradient(#EFE6E7,#E6D8DA);color:var(--wisnia)}
+.black{position:absolute;top:0;height:62%;background:linear-gradient(#2B2B2B,#0E0E0E);border-radius:0 0 5px 5px;cursor:pointer;z-index:2;box-shadow:0 3px 4px rgba(0,0,0,.35)}
+.black.on{background:linear-gradient(#5A1520,#3C0E16)}
+.white:focus-visible,.black:focus-visible{outline:2px solid var(--wisnia);outline-offset:-4px}
+
+section{padding-block:clamp(64px,9vw,120px)}
+.kicker{font-size:.95rem;font-weight:600;color:var(--wisnia);margin-bottom:12px}
+h2{font-size:clamp(2.2rem,1.4rem + 3vw,3.8rem);letter-spacing:-.015em}
+
+/* Cennik */
+.prices{margin-top:44px;display:grid;gap:0}
+.prices .row{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--linia);align-items:baseline}
+.prices .row:first-child{border-top:1px solid var(--czarny)}
+.prices h3{font-size:1.7rem}
+.prices p{grid-column:1;color:var(--szary);max-width:38em}
+.prices .amt{grid-row:1 / span 2;grid-column:2;font-family:var(--serif);font-size:1.8rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Dojazd */
+.zone{background:var(--czarny);color:var(--bialy)}
+.zone .wrap{display:grid;gap:40px}
+@media(min-width:900px){.zone .wrap{grid-template-columns:1fr 1fr;align-items:center}}
+.zone .kicker{color:#E2A0AA}
+.zone p.lead{color:#BDBCB5;margin-top:18px;max-width:30em}
+.check{display:grid;gap:14px}
+.check label{font-weight:600}
+.check .field{display:flex;gap:10px;flex-wrap:wrap}
+.check input{font:inherit;font-size:1.5rem;letter-spacing:.08em;width:8.2em;padding:12px 16px;background:transparent;color:#fff;border:1.5px solid #6A6A66;border-radius:12px}
+.check input:focus{border-color:#fff;outline:none}
+.check .btn{background:#fff;color:var(--czarny)}
+.check .btn:hover{background:#E2A0AA}
+.result{min-height:5.5em;padding:18px 20px;border-radius:12px;background:#1F1F1F;color:#DDDCD6}
+.result strong{display:block;font-family:var(--serif);font-size:1.6rem;color:#fff;font-weight:500}
+.ring{display:flex;gap:6px;flex-wrap:wrap;font-size:.85rem;color:#9C9B95}
+.ring span{border:1px solid #444;border-radius:999px;padding:3px 10px}
+
+/* Rezerwacja */
+.book .grid{display:grid;gap:40px;margin-top:40px}
+@media(min-width:900px){.book .grid{grid-template-columns:1.15fr 1fr}}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.day{font:inherit;text-align:left;background:#fff;border:1px solid var(--linia);border-radius:12px;padding:12px 14px;cursor:pointer;display:grid;gap:2px}
+.day b{font-family:var(--serif);font-size:1.6rem;font-weight:500;line-height:1}
+.day small{color:var(--szary);font-size:.82rem}
+.day[aria-pressed="true"]{border-color:var(--czarny);box-shadow:inset 0 0 0 1px var(--czarny);background:var(--kosc)}
+.day:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.slots{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.slot{font:inherit;background:transparent;border:1.5px solid var(--czarny);border-radius:999px;padding:8px 16px;cursor:pointer}
+.slot[aria-pressed="true"]{background:var(--czarny);color:#fff}
+form.bf{display:grid;gap:14px;background:var(--kosc);padding:28px;border-radius:16px;align-content:start}
+form.bf label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+form.bf input,form.bf select{font:inherit;padding:11px 14px;border:1px solid var(--linia);border-radius:10px;background:#fff}
+.summary{font-size:.95rem;color:var(--szary)}
+.summary b{color:var(--czarny)}
+.ok{background:#fff;border-radius:10px;padding:14px 16px;border-left:3px solid var(--wisnia)}
+
+.quote{border-top:1px solid var(--linia)}
+.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,1.1rem + 2vw,2.6rem);line-height:1.25;max-width:24em}
+.quote cite{display:block;margin-top:18px;font-style:normal;color:var(--szary);font-size:.95rem}
+footer{border-top:1px solid var(--linia);padding-block:26px;font-size:.88rem;color:var(--szary)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="#">Kamerton<sup>a¹ 440 Hz</sup></a>
+<nav aria-label="Menu"><a href="#cennik">Cennik</a><a href="#dojazd">Dojazd</a><a href="#termin">Termin</a></nav></div></header>
+
+<main>
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <h1>Twój fortepian zasługuje na drugie życie</h1>
+    <div class="sub">
+      <p>Stroję, reguluję mechanikę i naprawiam fortepiany oraz pianina w domach, szkołach muzycznych i salach koncertowych. Warszawa i okolice do 40 km.</p>
+      <a class="btn" href="#termin">Zarezerwuj strojenie</a>
+    </div>
+  </div>
+  <div class="keys-wrap">
+    <div class="wrap keys-head"><span>Zagraj. Każdy klawisz brzmi w stroju równomiernie temperowanym.</span><output id="note">a¹ = 440,00 Hz</output></div>
+    <div class="wrap"><div class="keys" id="keys" aria-label="Klawiatura, oktawa od c¹ do c²"></div></div>
+  </div>
+</section>
+
+<section id="cennik">
+  <div class="wrap">
+    <p class="kicker">Cennik</p>
+    <h2>Ceny bez niespodzianek</h2>
+    <div class="prices">
+      <div class="row"><h3>Strojenie pianina</h3><p>Pełne strojenie do a¹ 440 Hz, kontrola mechaniki i pedałów. Około 90 minut.</p><span class="amt">280 zł</span></div>
+      <div class="row"><h3>Strojenie fortepianu</h3><p>Instrumenty do 2 m długości. Dłuższe, koncertowe, wyceniam osobno.</p><span class="amt">350 zł</span></div>
+      <div class="row"><h3>Podciągnięcie stroju</h3><p>Gdy instrument nie był strojony ponad trzy lata i stoi niżej niż 435 Hz. Wymaga drugiej wizyty po miesiącu.</p><span class="amt">+180 zł</span></div>
+      <div class="row"><h3>Regulacja mechaniki</h3><p>Wyrównanie gry, wymiana zużytych filców, intonacja młotków.</p><span class="amt">od 600 zł</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="dojazd">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Dojazd</p>
+      <h2>Sprawdź, czy dojadę</h2>
+      <p class="lead">Wpisz kod pocztowy miejsca, w którym stoi instrument. Pokażę strefę, koszt dojazdu i najbliższy wolny termin.</p>
+      <div class="ring" style="margin-top:20px"><span>Strefa 1: Warszawa</span><span>Strefa 2: do 20 km</span><span>Strefa 3: do 40 km</span></div>
+    </div>
+    <form class="check" id="zoneForm">
+      <label for="zip">Kod pocztowy</label>
+      <div class="field"><input id="zip" inputmode="numeric" placeholder="00-950" maxlength="6" autocomplete="postal-code"><button class="btn" type="submit">Sprawdź</button></div>
+      <div class="result" id="zoneResult" aria-live="polite">Na przykład 00-950 (Śródmieście), 05-500 (Piaseczno) albo 05-800 (Pruszków).</div>
+    </form>
+  </div>
+</section>
+
+<section class="book" id="termin">
+  <div class="wrap">
+    <p class="kicker">Termin</p>
+    <h2>Wybierz dzień wizyty</h2>
+    <div class="grid">
+      <div>
+        <div class="days" id="days" role="group" aria-label="Dni"></div>
+        <div class="slots" id="slots" role="group" aria-label="Godziny"></div>
+      </div>
+      <form class="bf" id="bf">
+        <label>Instrument<select id="inst"><option value="Pianino">Pianino</option><option value="Fortepian">Fortepian</option></select></label>
+        <label>Imię i nazwisko<input id="name" required autocomplete="name"></label>
+        <label>Telefon<input id="tel" required type="tel" autocomplete="tel"></label>
+        <p class="summary" id="summary">Wybierz dzień i godzinę po lewej.</p>
+        <button class="btn" type="submit">Zarezerwuj wizytę</button>
+        <p class="ok" id="ok" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>„Pianino po dziadku stało nieruszane dwadzieścia lat. Po dwóch wizytach córka gra na nim codziennie.”</blockquote>
+    <cite>Przykładowa opinia klienta</cite>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>© Kamerton, strojenie instrumentów. Tel. 22 000 00 00</p><p>Strona pokazowa przygotowana przez WebFolk. Firma i dane są fikcyjne.</p></div></footer>
+
+<script>
+(function(){
+  /* Klawiatura z dźwiękiem z Web Audio */
+  var names=['c¹','cis¹','d¹','dis¹','e¹','f¹','fis¹','g¹','gis¹','a¹','ais¹','h¹','c²'];
+  var black=[1,3,6,8,10];
+  var keys=document.getElementById('keys'),out=document.getElementById('note'),ctx=null;
+  var whites=[];
+  names.forEach(function(n,i){ if(black.indexOf(i)<0){whites.push(i);} });
+  whites.forEach(function(i){
+    var b=document.createElement('button');b.className='white';b.type='button';b.dataset.i=i;b.textContent=names[i];b.setAttribute('aria-label',names[i]);keys.appendChild(b);
+  });
+  var wW=100/whites.length;
+  black.forEach(function(i){
+    var leftWhite=whites.indexOf(i-1);
+    var b=document.createElement('button');b.className='black';b.type='button';b.dataset.i=i;b.setAttribute('aria-label',names[i]);
+    b.style.left='calc('+((leftWhite+1)*wW)+'% - '+(wW*0.3)+'%)';b.style.width=(wW*0.6)+'%';keys.appendChild(b);
+  });
+  function freq(i){return 440*Math.pow(2,(i-9)/12);}
+  function play(i,el){
+    var f=freq(i);out.textContent=names[i]+' = '+f.toFixed(2).replace('.',',')+' Hz';
+    el.classList.add('on');setTimeout(function(){el.classList.remove('on');},220);
+    try{
+      ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+      var t=ctx.currentTime,g=ctx.createGain();g.connect(ctx.destination);
+      g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.35,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+1.8);
+      [1,2,3].forEach(function(h,k){var o=ctx.createOscillator(),gg=ctx.createGain();o.type=k?'sine':'triangle';o.frequency.value=f*h;gg.gain.value=[1,.35,.12][k];o.connect(gg);gg.connect(g);o.start(t);o.stop(t+1.9);});
+    }catch(e){}
+  }
+  keys.addEventListener('pointerdown',function(e){var b=e.target.closest('button');if(b){e.preventDefault();play(+b.dataset.i,b);}});
+  keys.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.dataset.i){e.preventDefault();play(+e.target.dataset.i,e.target);}});
+
+  /* Strefy dojazdu */
+  var zones=[
+    {test:/^0[0-4]/,z:1,cost:'bez dopłaty',area:'Warszawa',wait:2},
+    {test:/^05-(0[0-9]|1[0-2]|50|8[0-3]|09|07)/,z:2,cost:'+40 zł',area:'okolice Warszawy do 20 km',wait:4},
+    {test:/^05-|^96-|^07-/,z:3,cost:'+80 zł',area:'do 40 km od Warszawy',wait:6}
+  ];
+  document.getElementById('zoneForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=document.getElementById('zip').value.trim().replace(/^(\d{2})(\d{3})$/,'$1-$2'),r=document.getElementById('zoneResult');
+    if(!/^\d{2}-\d{3}$/.test(v)){r.innerHTML='<strong>Wpisz kod w formacie 00-000</strong>Na przykład 02-495.';return;}
+    var hit=null;for(var i=0;i<zones.length;i++){if(zones[i].test.test(v)){hit=zones[i];break;}}
+    if(!hit){r.innerHTML='<strong>'+v+' jest poza moim zasięgiem</strong>Zadzwoń, a polecę zaufanego stroiciela w Twojej okolicy.';return;}
+    var d=new Date();d.setDate(d.getDate()+hit.wait);
+    r.innerHTML='<strong>Strefa '+hit.z+': '+hit.area+'</strong>Dojazd '+hit.cost+'. Najbliższy wolny termin: '+d.toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'})+'.';
+  });
+
+  /* Kalendarz rezerwacji z przykładowymi terminami */
+  var daysEl=document.getElementById('days'),slotsEl=document.getElementById('slots'),sum=document.getElementById('summary');
+  var picked={day:null,slot:null};
+  var hours=['9:00','11:30','14:00','16:30'];
+  var start=new Date();start.setHours(0,0,0,0);
+  for(var k=1,made=0;made<10;k++){
+    var d=new Date(start);d.setDate(start.getDate()+k);
+    if(d.getDay()===0)continue;
+    made++;
+    var full=(d.getDate()*7)%5===0;
+    var b=document.createElement('button');b.type='button';b.className='day';b.setAttribute('aria-pressed','false');
+    b.dataset.date=d.toISOString();b.disabled=full;
+    b.innerHTML='<small>'+d.toLocaleDateString('pl-PL',{weekday:'short'})+'</small><b>'+d.getDate()+'</b><small>'+(full?'brak miejsc':d.toLocaleDateString('pl-PL',{month:'long'}))+'</small>';
+    daysEl.appendChild(b);
+  }
+  function renderSlots(date){
+    slotsEl.innerHTML='';
+    var seed=new Date(date).getDate();
+    hours.forEach(function(h,i){
+      if((seed+i)%3===0)return;
+      var s=document.createElement('button');s.type='button';s.className='slot';s.textContent=h;s.setAttribute('aria-pressed','false');slotsEl.appendChild(s);
+    });
+  }
+  function summary(){
+    if(!picked.day){sum.textContent='Wybierz dzień i godzinę po lewej.';return;}
+    var d=new Date(picked.day).toLocaleDateString('pl-PL',{weekday:'long',day:'numeric',month:'long'});
+    sum.innerHTML='Wizyta: <b>'+d+(picked.slot?', '+picked.slot:'')+'</b>'+(picked.slot?'':' (wybierz godzinę)');
+  }
+  daysEl.addEventListener('click',function(e){var b=e.target.closest('.day');if(!b||b.disabled)return;
+    daysEl.querySelectorAll('.day').forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');
+    picked.day=b.dataset.date;picked.slot=null;renderSlots(picked.day);summary();});
+  slotsEl.addEventListener('click',function(e){var s=e.target.closest('.slot');if(!s)return;
+    slotsEl.querySelectorAll('.slot').forEach(function(x){x.setAttribute('aria-pressed','false');});s.setAttribute('aria-pressed','true');picked.slot=s.textContent;summary();});
+  var firstFree=daysEl.querySelector('.day:not(:disabled)');if(firstFree)firstFree.click();
+  document.getElementById('bf').addEventListener('submit',function(e){e.preventDefault();var ok=document.getElementById('ok');
+    if(!picked.slot){ok.hidden=false;ok.textContent='Wybierz jeszcze godzinę wizyty.';return;}
+    ok.hidden=false;ok.textContent='Zarezerwowano: '+document.getElementById('inst').value.toLowerCase()+', '+sum.textContent.replace('Wizyta: ','')+'. To strona pokazowa, więc rezerwacja nie została wysłana.';});
+})();
+</script>
+</body>
+</html>
